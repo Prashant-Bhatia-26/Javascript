@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function demointernalalert() {
+            alert("internal alert.")
+        }
+        function demointernalconfirm() {
+            if (confirm("are you sure?????")) { alert("yesss"); }
+            else { alert("noooo"); }
+        }
+        function demointernalprompt() {
+            var fname = prompt("enter first name...");
+            var lname = prompt("enter last name...");
+            alert(fname + " " + lname);
+        }
+        function demo1() {
+            var a = prompt("enter first number");
+            var b = prompt("enter second number");
+            if (a > b) {
+                alert(a + " " + "is greater");
+            }
+            else {
+                alert(b + " " + "is greater");
+            }
+        }
+        function demo2() {
+            var a = prompt("enter the area of circle...");
+            var area = 3.14 * a * a;
+            alert("area of circle is " + " " + area);
+        }
+        function demo3() {
+            var a = prompt("enter any number..");
+            var cube = a * a * a;
+            alert("the cube of entered number is" + " " + cube);
+        }
+
+        function maximum() {
+            var a = prompt("enter first number");
+            var b = prompt("enter second number");
+            var c = prompt("enter third number");
+            if (a > b && a > c) {
+                alert(a + " " + "is greater");
+            }
+            else if (b > c && b > a) {
+                alert(b + " " + "is greater");
+            }
+            else {
+                alert(c + " " + "is greater");
+            }
+        }
+        function oe() {
+            var n = prompt("Enter any number ");
+            if (n % 2 == 0) {
+                alert(`${n} is an even number`);
+            }
+            else {
+                alert(`${n} is odd number`);
+            }
+        }
+        function checkPrime() {
+            let num = prompt("Enter a number:");
+            let i;
+            let flag = true;
+
+            for (i = 3; i < num; i++) {
+                if (num % i == 0) {
+                    flag = false
+                    break;
+                }
+            }
+            if (flag == true) alert(`${num} is prime number.`);
+            else alert(`${num} is not prime number.`);
+        }
+
+        function swap() {
+            var a = prompt("enter number a: ");
+            var b = prompt("enter number b: ");
+            var c;
+            c = b;
+            b = a;
+            a = c;
+            alert("a = " + a + "b = " + b);
+        }
+        function green() {
+            document.body.style.backgroundColor = "green";
+        }
+        function blue() {
+            document.getElementById("d1").style.backgroundColor = "blue";
+        }
+
+        function bodybg() {
+            document.body.style.backgroundColor = prompt("enter color name");
+        }
+        function divbg() {
+            document.getElementById("d1").style.backgroundColor = prompt("enter color name");
+        }
+
+        function body_b1() {
+            document.body.style.backgroundColor = document.getElementById("cp1").value;
+        }
+
+        function div_d1() {
+            document.getElementById("d1").style.backgroundColor = document.getElementById("cp2").value;
+        }
+    </script>
+
+    <script src="js/try.js" type="text/javascript"></script>
+
+</head>
+
+<body style="background-color: lightblue">
+    <div id="d1" style="background-color: red;height: 230px;width: 40%">hello</div>
+    <hr>
+    <input type="button" value="alert inline" onClick="alert('hello guys')" />&nbsp;&nbsp;
+    <input type="button" value="confirm inline" onClick="confirm('are you sure???')" />&nbsp;&nbsp;
+    <input type="button" value="prompt inline" onClick="prompt('are you sure???')" />
+    <hr />
+
+    <input type="button" value="alert internal" onClick="demointernalalert()" /> &nbsp;&nbsp;
+    <input type="button" value="confirm internal" onClick="demointernalconfirm()" />&nbsp;&nbsp;
+    <input type="button" value="prompt internal" onClick="demointernalprompt()" />
+    <hr />
+
+    <input type="button" value="alert external" onClick="demoexternalalert()" />&nbsp;&nbsp;
+    <input type="button" value="confirm external" onClick="demoexternalconfirm()" />&nbsp;&nbsp;
+    <input type="button" value="prompt external" onClick="demoexternalprompt()" />
+    <hr>
+
+    <input type="button" value="max number" onClick="demo1()" />&nbsp;&nbsp;
+    <input type="button" value="area of circle" onClick="demo2()" />&nbsp;&nbsp;
+    <input type="button" value="cube" onClick="demo3()" />
+    <hr>
+
+    <input type="button" value="nested max" onclick="maximum()" />
+    <input type="button" value="Odd & Even" onClick="oe()" />
+    <input type="button" value="Prime number" onClick="checkPrime()" />
+    <hr>
+
+    <input type="button" value="swap" onClick="swap()" />
+    <hr>
+
+    <input type="button" value="body bg green" onClick="green()" />
+    <input type="button" value="div color" onClick="blue()" />
+    <hr>
+    <input type="button" value="body bg prompt" onClick="bodybg()" />
+    <input type="button" value="div  prompt" onClick="divbg()" />
+    <hr>
+    <input type="color" id="cp1" onchange="body_b1()" />&nbsp;&nbsp;
+    <input type="color" id="cp2" onchange="div_d1()" />&nbsp;&nbsp;
+
+</body>
+
+</html>
